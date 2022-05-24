@@ -1,4 +1,4 @@
-package com.example.stopwatch;
+package com.example.stopwatch.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 

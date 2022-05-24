@@ -4,15 +4,95 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mainPage"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/stopwatchTimer"
+            android:text="@string/timer"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/_40ssp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:id="@+id/timerButtonsHolder"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_50sdp">
+
+            <!--Stop Button-->
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:id="@+id/stopIconHolder"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="@dimen/_50sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:id="@+id/stopIcon"
+                    android:src="@drawable/ic_stop"
+                    android:contentDescription="@string/stop_button"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--Start Button-->
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:id="@+id/startIconHolder"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_15sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center"
+                    android:id="@+id/startIcon"
+                    android:src="@drawable/ic_play"
+                    android:contentDescription="@string/start_button"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--Reset Button-->
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:id="@+id/resetIconHolder"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_15sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:id="@+id/resetIcon"
+                    android:src="@drawable/ic_reset"
+                    android:contentDescription="@string/reset_button" />
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
